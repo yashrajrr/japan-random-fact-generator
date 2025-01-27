@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Fact</h1>
+        <p id="fact"></p>
+        <button id="newFactButton">Show Another Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Anime originated in Japan in the early 20th century.",
+            "The first anime film is considered to be 'Namakura Gatana' released in 1917.",
+            "Anime can be categorized into various genres, including action, romance, horror, and fantasy.",
+            "The term 'anime' is derived from the English word 'animation.'",
+            "Studio Ghibli, founded by Hayao Miyazaki, is one of the most famous anime studios in the world.",
+            "Anime is often adapted from manga, which are Japanese comic books or graphic novels.",
+            "The longest-running anime series is 'Sazae-san,' which has been airing since 1969.",
+            "Anime has a significant influence on global pop culture, inspiring movies, video games, and fashion.",
+            "Cosplay, the practice of dressing up as anime characters, has become a popular subculture worldwide.",
+            "Anime conventions are held globally, where fans gather to celebrate their favorite shows and characters."
+        ];
+
+        function showRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[randomIndex];
+        }
+
+        // Show a random fact on page load
+        showRandomFact();
+
+        // Add event listener to button
+        document.getElementById('newFactButton').addEventListener('click', showRandomFact);
+    </script>
+</body>
+</html>
